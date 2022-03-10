@@ -29,6 +29,8 @@ Makefile.in
 /gtk2_prefs.spec
 .deps
 
+/src/support.c
+
 # OS-generated files
 .DS_Store
 .DS_Store?
