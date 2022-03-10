@@ -1,0 +1,50 @@
+
+# Builds
+/0*
+/doxygen_doc*
+/win32*
+/win64*
+/cmake-build-*
+/build
+
+# Build system artifacts
+/autom4te.cache
+/aclocal.m4
+/ar-lib
+/compilation_flags
+/compile
+/config.guess
+/config.h
+/config.h.in
+/config.log
+/config.status
+/config.sub
+/configure
+/depcomp
+/install-sh
+Makefile
+Makefile.in
+/missing
+/stamp-h1
+/gtk2_prefs.spec
+.deps
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# IDE
+/.vs
+/*.pcs
+/.idea
+/CMakeLists.txt.user
+/.kdev4
+
+# Backup files
+*~
