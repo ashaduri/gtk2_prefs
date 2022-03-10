@@ -5,7 +5,7 @@ AM_INIT_AUTOMAKE(gtk2_prefs, 0.4.1)
 
 AC_LANG_CPLUSPLUS
 AC_PROG_CXX
-AM_PROG_LIBTOOL
+# AM_PROG_LIBTOOL
 
 
 dnl ------------------------------
