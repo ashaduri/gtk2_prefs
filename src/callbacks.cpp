@@ -11,6 +11,11 @@
 
 #include "main.h"
 
+/**
+ * \file
+ * Callback definitions. Glade may modify this file.
+ */
+
 
 
 extern GtkWidget* g_main_window;
@@ -109,7 +114,7 @@ void
 on_main_reset_button_clicked           (GtkButton       *button,
                                         gpointer         user_data)
 {
-	set_theme(get_orig_theme(), get_orig_font());
+	set_theme(get_orig_theme_ref(), get_orig_font_description_ref());
 }
 
 
@@ -118,7 +123,7 @@ on_main_window_delete_event            (GtkWidget       *widget,
                                         GdkEvent        *event,
                                         gpointer         user_data)
 {
-	program_shutdown();
+	quit_program();
 	return true;
 }
 
@@ -131,7 +136,7 @@ on_main_use_default_font_radio_toggled (GtkToggleButton *togglebutton,
 
 	gtk_widget_set_sensitive(lookup_widget(g_main_window, "main_font_selector_button"), !default_font);
 
-	apply_theme(get_selected_theme(), get_selected_font());
+	apply_theme(get_selected_theme(), get_selected_font_description());
 }
 
 
@@ -139,7 +144,7 @@ void
 on_main_font_selector_button_font_set  (GtkFontButton   *fontbutton,
                                         gpointer         user_data)
 {
-	apply_theme(get_selected_theme(), get_selected_font());
+	apply_theme(get_selected_theme(), get_selected_font_description());
 }
 
 

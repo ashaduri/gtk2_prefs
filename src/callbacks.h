@@ -1,5 +1,9 @@
 #include <gtk/gtk.h>
 
+/**
+ * \file
+ * Callback declarations. Glade may modify this file.
+ */
 
 void
 on_main_showpreviewtoggle_toggled               (GtkToggleButton *togglebutton,

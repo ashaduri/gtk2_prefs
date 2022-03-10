@@ -9,7 +9,6 @@
 #ifdef _WIN32
 
 #include <string>
-#include "sys_win32.h"
 #include "win32util.h"
 
 
@@ -20,8 +19,8 @@ std::string win32_get_registry_value_string(HKEY base, const std::string& keydir
 {
 
 	HKEY reg_key = NULL;
-	DWORD type;
-	DWORD nbytes;
+	DWORD type = 0;
+	DWORD nbytes = 0;
 	char* result = NULL;
 //HKEY_CURRENT_USER
 	nbytes = 0;
@@ -35,14 +34,12 @@ std::string win32_get_registry_value_string(HKEY base, const std::string& keydir
 	if (reg_key != NULL)
 		RegCloseKey (reg_key);
 
-	std::string ret = "";
-
+	std::string ret;
 	if (result) {
 		ret = result;
 	}
 
 	return ret;
-
 }
 
 
@@ -50,9 +47,8 @@ std::string win32_get_registry_value_string(HKEY base, const std::string& keydir
 
 void win32_set_registry_value_string(HKEY base, const std::string& keydir, const std::string& key, const std::string& value)
 {
-
 	HKEY reg_key = NULL;
-	DWORD nbytes;
+	DWORD nbytes = 0;
 
 	nbytes = value.length() + 1;
 
@@ -62,7 +58,6 @@ void win32_set_registry_value_string(HKEY base, const std::string& keydir, const
 
 	if (reg_key != NULL)
 		RegCloseKey (reg_key);
-
 }
 
 

@@ -10,12 +10,20 @@
 
 #ifdef _WIN32
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
 #include <string>
-#include "sys_win32.h"
 
 
-
+/**
+ * Get registry value
+ */
 std::string win32_get_registry_value_string(HKEY base, const std::string& keydir, const std::string& key);
+
+/**
+ * Set registry value
+ */
 void win32_set_registry_value_string(HKEY base, const std::string& keydir, const std::string& key, const std::string& value);
 
 
